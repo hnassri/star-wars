@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 
 function PeopleAll() {
@@ -22,7 +23,7 @@ function PeopleAll() {
                 { people.data.next !== null && <button onClick={() => fetchPeople(people.data.next)}>Suivant</button>}
                 { people.data.results.map((element, index) => {
                     return (
-                        <h3 key={index}>{element.name}</h3>
+                        <h3 key={index}><Link to="/">{element.name}</Link></h3>
                     )
                 })}
             </div>
