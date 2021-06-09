@@ -14,6 +14,10 @@ function PeopleAll() {
     if(people){
         return(
             <div className="PeopleAll">
+                <label>Rechercher un personnage</label>
+                <div>
+                    <input placeholder="Ex: r2d2" onChange={(e) => fetchPeople("https://swapi.dev/api/people/?search=" + e.target.value)}/>
+                </div>
                 { people.data.previous !== null && <button onClick={() => fetchPeople(people.data.previous)}>Précédent</button>}
                 { people.data.next !== null && <button onClick={() => fetchPeople(people.data.next)}>Suivant</button>}
                 { people.data.results.map((element, index) => {
