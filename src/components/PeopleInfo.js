@@ -8,7 +8,7 @@ function PeopleInfo(){
     const [starships, setStarships] = useState([]);    
     useEffect(() => {
         const fetchPeopleData = async () => {
-            const people_all = await axios.get("https://swapi.dev/api/people/" + id + "/");
+            const people_all = await axios.get("https://swapi.dev/api/starships/" + id + "/");
             if(people_all.data.starships.length > 0){
                 people_all.data.starships.forEach(async (element) => {
                     const data = await axios.get(element);
